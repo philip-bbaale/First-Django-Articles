@@ -25,7 +25,9 @@ SECRET_KEY = 'wxw*48a&zngwk-3f$w+r%@wwfzq=4x0e&pfes#vlqw3&dmr(ai'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'pipdjangoarticle.herokuapp.com',
+]
 
 
 # Application definition
