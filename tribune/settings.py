@@ -79,14 +79,19 @@ WSGI_APPLICATION = 'tribune.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tribune',
-        'USER': 'pipbbaale',
-        'PASSWORD':'',
-        'DATABASE_URL' : 'postgres://hjutbcdqxosaiz:12fb5521543028e5fbdc5349fab2a91c36373e9150d9770f120729ad34fad738@ec2-35-169-254-43.compute-1.amazonaws.com:5432/d1dufr144fnttd'
-    }    
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME', 'postgres'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'password'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
+        'TEST': {
+            'NAME': 'test_news'
+        }
+    },
 }
 
 
