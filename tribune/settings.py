@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'pipdjangoarticle.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
@@ -84,7 +85,8 @@ DATABASES = {
         'NAME': 'tribune',
         'USER': 'pipbbaale',
         'PASSWORD':'',
-    }
+        'DATABASE_URL' : 'postgres://hjutbcdqxosaiz:12fb5521543028e5fbdc5349fab2a91c36373e9150d9770f120729ad34fad738@ec2-35-169-254-43.compute-1.amazonaws.com:5432/d1dufr144fnttd'
+    }    
 }
 
 
