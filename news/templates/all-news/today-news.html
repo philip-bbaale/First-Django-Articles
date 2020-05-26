@@ -1,22 +1,31 @@
 {%extends 'all-news/base.html'%}
+{% load bootstrap4 %}
 {% block content %} 
 {{ block.super}}
 
 <div class="container">
+  <div class="border border-secondary  p-3 m-3 rounded">
+    <form  action="{%url 'newsToday'%}" method="post">
+      {%csrf_token%}
+
+      {% bootstrap_form letterForm layout='inline' %}
+      <input type="submit" value="Subscribe">
+    </form>
+  </div>
 
   <!-- Looping through news   -->
   {% for news_item in news %}
 
   <div class="row content-section mt-5">
     <!-- displaying News articles -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="col-6">
       <h2 class="text-center"> {{ news_item.title }} </h2>
       <p class="text-justify"> {{news_item.post}} </p>
       <div>
           <p class="text-muted">--articleby: <span class="text-success">{{news_item.editor}}</span></p>
       </div>
     </div>
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="col-6">
       <img src="{{news_item.article_image.url}}" class="img-responsive img-thumbnail" alt="Image">
     </div>
   </div>

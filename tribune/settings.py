@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     'pipdjangoarticle.herokuapp.com',
     '127.0.0.1',
     "197.237.3.48",
+    "localhost:8000"
 ]
 
 
